@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-4">
+           <form method="post">{% csrf_token %}
+                <h1 class="h3 mb-0 text-gray-800">vous êtes sûr de vouloir supprimer le prospect  "{{ object }}"?</h1>
+                <input type="submit" value="Confirmer" class="btn btn-danger">
+                <input type="submit" value="Revenir en arriére" class="btn btn-primary" href="{% url 'leads:lead_list' %}">
+
+
+
+            </form>
+        </div>          
+        <!-- Main Content Here -->
+        
+        
+        
+    </div>
+    <!-- /.container-fluid -->
+{% endblock content %}

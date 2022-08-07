@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %} 
+
+{% block content %}
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-4">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'leads:lead_list' %}">Prsopects</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Création de prospect</li>
+               </ol>
+            </nav>
+        </div>  
+    <!-- Main Content Here -->
+         <form method="POST">
+            <div class="form-group">
+               {% csrf_token %}
+               {{ form|crispy}}
+            </div>
+            <button type="submit" class="btn btn-primary">Create</button>
+         </form>
+        
+        
+    </div>
+    <!-- /.container-fluid -->
+{% endblock content %}
